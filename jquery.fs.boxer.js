@@ -67,9 +67,9 @@ if (jQuery) (function($) {
 		var checkExt = source.toLowerCase().split(".");
 		var extension = checkExt[ checkExt.length - 1 ];
 		
-		var is_image = (extension == "jpeg" || extension == "jpg" || extension == "gif" || extension == "png");
-		var is_url = (!is_image && source.substr(0, 4) == "http");
-		var is_element = (!is_image && !is_url && $(source).length > 0);
+		var is_image = $target.data("target") == "image" || (extension == "jpeg" || extension == "jpg" || extension == "gif" || extension == "png");
+		var is_url = $target.data("target") == "url" || (!is_image && source.substr(0, 4) == "http");
+		var is_element = $target.data("target") == "element" || (!is_image && !is_url && $(source).length > 0);
 		
 		// Check if one already exists
 		if ($("#boxer").length < 1 && (is_image || is_url || is_element)) {
