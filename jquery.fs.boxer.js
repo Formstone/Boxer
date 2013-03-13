@@ -96,6 +96,16 @@ if (jQuery) (function($) {
 					data.gallery.index = data.gallery.$items.index(data.$target);
 					data.gallery.total = data.gallery.$items.length - 1;
 				}
+
+				// data-rel support
+				var rel = data.$target.attr("data-rel");
+				if (typeof rel !== "undefined" && rel !== false) {
+					data.gallery.active = true;
+					data.gallery.rel = rel;
+					data.gallery.$items = $("a[data-rel= " + data.gallery.rel + "]");
+					data.gallery.index = data.gallery.$items.index(data.$target);
+					data.gallery.total = data.gallery.$items.length - 1;
+				}
 			}
 			
 			// Assemble HTML
