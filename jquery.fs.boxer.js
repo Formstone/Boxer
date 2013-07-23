@@ -313,7 +313,7 @@ if (jQuery) (function($) {
 	// Format captions
 	function _formatCaption($target) {
 		var title = $target.attr("title");
-		return (title != "" && title !== undefined) ? '<p class="caption">' + title + '</p>' : "";
+		return (title != "" && title !== undefined) ? $('<p>').addClass('caption').text(title)[0].outerHTML : "";
 	}
 	
 	// Resize image to fit in viewport
