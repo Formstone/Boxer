@@ -27,7 +27,8 @@ if (jQuery) (function($) {
 		top: 0,
 		videoRatio: 9 / 16,
 		videoWidth: 600,
-		width: 100
+		width: 100,
+		textOf: "of"
 	};
 	// Internal Data
 	var data = {};
@@ -167,7 +168,7 @@ if (jQuery) (function($) {
 						html += ' style="display: none;"'; 
 					}
 					html += '>';
-					html += '<span class="current">' + (data.gallery.index + 1) + '</span> of <span class="total">' + (data.gallery.total + 1) + '</span>';
+					html += '<span class="current">' + (data.gallery.index + 1) + '</span> ' + data.options.textOf + ' <span class="total">' + (data.gallery.total + 1) + '</span>';
 					html += '</p>';
 					html += '<div class="boxer-caption gallery">';
 				} else {
