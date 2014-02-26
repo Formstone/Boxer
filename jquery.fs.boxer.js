@@ -338,7 +338,6 @@
 			_clearTimer(data.resizeTimer);
 
 			// Clean up
-			data.$window.off(".boxer");
 			data.$body.off(".boxer")
 					  .removeClass("boxer-open");
 
