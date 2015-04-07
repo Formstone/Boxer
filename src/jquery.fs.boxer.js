@@ -44,7 +44,7 @@
 		margin: 50,
 		minHeight: 100,
 		minWidth: 100,
-		mobile: false,
+		mobile: null,
 		opacity: 0.75,
 		retina: false,
 		requestKey: "boxer",
@@ -192,7 +192,7 @@
 				gallery: {
 					active: false
 				},
-				isMobile: (trueMobile || e.data.mobile),
+				isMobile: typeof(e.data.mobile) == 'boolean' ? e.data.mobile : trueMobile,
 				isAnimating: true,
 				oldContentHeight: 0,
 				oldContentWidth: 0
